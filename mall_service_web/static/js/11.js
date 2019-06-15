@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{177:function(n,t,e){"use strict";e.r(t);var s={data:function(){return{}}},a=e(23),r=Object(a.a)(s,function(){var n=this,t=n.$createElement;return(n._self._c||t)("div",{staticStyle:{"font-size":"22px"}},[n._v("\n  亲，欢迎使用"+n._s(n.$parent.systemName)+"，首页正在开发中，敬请期待...\n")])},[],!1,null,null,null);t.default=r.exports}}]);

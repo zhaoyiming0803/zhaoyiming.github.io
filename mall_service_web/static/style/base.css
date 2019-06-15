@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/**
+ * 公用CSS
+ * @author: zhaoyiming
+ * @since:  2018/12/11
+ */
+
+body,
+ul,
+li,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+div,
+dl,
+dt,
+dd,
+input,
+img,
+pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+}
+
+body {
+  line-height: 1;
+	font: 400 13px/1.5 "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	background-color: #ececec !important;
+}
+
+input, textarea {
+	border: none 0;
+	outline: none;
+	resize: none;
+}
+
+h1.title {
+  margin: 10px 0 18px 0;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  border-left: 4px solid #2d8cf0;
+  box-sizing: border-box;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border:1px solid #eaeaea;
+}
+
+.table tbody tr td {
+	vertical-align: middle;
+}
+
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.clearfix:after,.cl:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "";
+}
+
+.dis-block {
+	display: block;
+}
+
+.dis-none {
+	display: none;
+}
+
+.mask {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.change-page-container {
+  padding-top: 10px;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.format-json {
+  display: block;
+  margin-top: -20px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.font-32 {
+  font-size: 32px;
+}
+
+.font-34 {
+  font-size: 34px;
+}
