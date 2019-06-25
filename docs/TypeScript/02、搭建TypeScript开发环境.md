@@ -63,3 +63,7 @@ rulesDirectory 可以指定规则配置文件，这里指定相对路径
 [TSLint规则说明](https://palantir.github.io/tslint/rules/)
 
 最后就是安装 webpack 并配置 webpack，这个就很熟悉了，代码可参考项目：[learn-typescript](https://github.com/zymfe/learn-typescript)
+
+### 注意
+
+本文最后编辑于2019/06/25，技术更替飞快，文中部分内容可能已经过时，如有疑问，可在线提issue。
