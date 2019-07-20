@@ -1,1 +1,0 @@
-参考：[TypeScript 笔记源码](https://github.com/zymfe/learn-typescript)
