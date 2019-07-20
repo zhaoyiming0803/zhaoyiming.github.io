@@ -33,16 +33,17 @@
     <div class="title">赵一鸣的笔记本</div>
     <script type="text/javascript">
       ;(function () {
-        if (!'serviceWorkder' in navigator) return;
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./sw.js', {scope: '/test-pwa/'})
-            .then(function (registration) {
-              console.log(registration);
-            })
-            .catch(function (error) {
-              console.log(error);
-            })
-        });
+        if (!'serviceWorkder' in navigator) {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./sw.js', {scope: '/test-pwa/'})
+              .then(function (registration) {
+                console.log(registration);
+              })
+              .catch(function (error) {
+                console.log(error);
+              })
+          });
+        }
       })();
     </script>
   </body>

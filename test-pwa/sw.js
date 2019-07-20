@@ -1,15 +1,28 @@
-;(function () {
+this.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open('my-cache-v1').then(function (cache) {
+      cache.addAll([
+        './',
+        './index.js',
+        './index.css'
+      ]);
+    })
+  );
+});
 
-  if ('serviceWorkder' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./sw.js', {scope: '/test-pwa/'})
-        .then(function (registration) {
-          console.log(registration.scope);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-    });
-  }
-
-})();
+this.addEventListener('activate', function (event) {
+  event.waitUntil(
+    Promise.all([
+      this.clients.claim(),
+      caches.keys().then(function (cacheList) {
+        return Promise.all(
+          cacheList.map(function (cacheName) {
+            if (cacheName !== 'my-cache-v1') {
+              return caches.delete(cacheName);
+            }
+          });
+        )
+      })
+    ]);
+  );
+})
