@@ -20,9 +20,9 @@ this.addEventListener('activate', function (event) {
             if (cacheName !== 'my-cache-v1') {
               return caches.delete(cacheName);
             }
-          });
+          })
         )
       })
-    ]);
+    ])
   );
 })
