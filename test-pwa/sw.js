@@ -1,4 +1,4 @@
-this.addEventListener('install', function (event) {
+self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open('my-cache-v1').then(function (cache) {
       cache.addAll([
@@ -10,10 +10,10 @@ this.addEventListener('install', function (event) {
   );
 });
 
-this.addEventListener('activate', function (event) {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
     Promise.all([
-      this.clients.claim(),
+      self.clients.claim(),
       caches.keys().then(function (cacheList) {
         return Promise.all(
           cacheList.map(function (cacheName) {
