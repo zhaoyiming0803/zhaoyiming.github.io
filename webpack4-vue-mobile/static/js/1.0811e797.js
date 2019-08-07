@@ -1,2 +1,0 @@
-/*! created 2019/08/07 by zhaoyimig */
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{6:function(t,e,n){"use strict";n.r(e);function i(){var t=this,e=t.$createElement;return(t._self._c||e)("div",{staticClass:"detail-container"},[t._v("\n  detail\n")])}i._withStripped=!0;var a={data:function(){return{}}},s=n(3),r=Object(s.a)(a,i,[],!1,null,"98596bd0",null);r.options.__file="src/pages/detail/index.vue";e.default=r.exports}}]);
