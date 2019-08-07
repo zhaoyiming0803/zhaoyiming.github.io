@@ -1,0 +1,2 @@
+/*! created 2019/08/07 by zhaoyimig */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{8:function(t,n,e){"use strict";function i(){var t=this,n=t.$createElement;return(t._self._c||n)("div",{staticClass:"list-container"},[t._v("\n  list\n")])}e.r(n),i._withStripped=!0;var s=e(3),a=Object(s.a)({data:function(){return{}}},i,[],!1,null,"335db125",null);a.options.__file="src/pages/list/index.vue",n.default=a.exports}}]);
