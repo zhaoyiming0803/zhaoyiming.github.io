@@ -12,7 +12,7 @@
     window.history.pushState(null, null, '#');
     window.addEventListener('hashchange', function (e) {
       document.querySelector('#app').innerHTML = 200;
-    });  
+    }, true);  
   </script>
 </body>
 </html>
