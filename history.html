@@ -10,7 +10,7 @@
   <div id="app">100</div>
   <script>
     window.history.pushState(null, null, '#');
-    window.addEventListener('popstate', function (e) {
+    window.addEventListener('hashchange', function (e) {
       document.querySelector('#app').innerHTML = 200;
     });  
   </script>
