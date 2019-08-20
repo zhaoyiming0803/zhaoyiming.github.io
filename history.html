@@ -9,7 +9,7 @@
 <body>
   <div id="app">100</div>
   <script>
-    window.history.pushState(null, null, window.location.href);
+    window.history.pushState(null, null, '#');
     window.addEventListener('popstate', function (e) {
       document.querySelector('#app').innerHTML = 200;
     });  
