@@ -7,10 +7,11 @@
   <title>Document</title>
 </head>
 <body>
+  <div id="app">100</div>
   <script>
     window.history.pushState(null, null, window.location.href);
     window.addEventListener('popstate', function (e) {
-      alert(123);
+      document.querySelector('#app').innerHTML = 200;
     });  
   </script>
 </body>
