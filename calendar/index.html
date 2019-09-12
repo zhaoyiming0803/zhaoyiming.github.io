@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name = "format-detection" content="telephone = no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>价格日历插件demo</title>
+		<style type="text/css">
+			.calendar-backdrop {display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.7); z-index: 999; }
+			.test-wraper { text-align: center;}
+			.test-wraper p {margin: 10px 0 10px 10px;}
+			.test-wraper select {height: 30px; line-height: 30px;}
+			.test-wraper a {display: block; width: 80%; height: 35px; margin: 0 auto; line-height: 35px; background-color: #f00; color: #fff; font-size: 14px; text-align: center;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="calendar.css" />
+	</head>
+	<body>
+		<div id="calendar-backdrop" class="calendar-backdrop"></div>
+		<div class="test-wraper">
+			<p>
+				<select id="step">
+					<option value="0">---请选择最多显示的月份数---</option>
+					<option value="2">2</option>
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+				</select>个月
+			</p>
+			<p>
+				<select id="leastdays">
+					<option value="0">---请选择最小日期间隔数---</option>
+					<option value="1">1</option>
+					<option value="3">3</option>
+					<option value="5">5</option>
+					<option value="7">7</option>
+				</select>天
+			</p>
+			<p>
+				<select id="show-price">
+					<option value="0">---请选择是否在日历中显示价格---</option>
+					<option value="1">是</option>
+					<option value="2">否</option>
+				</select>
+			</p>
+			<p>
+				<a href="javascript:;" id="show-calendar">展示日历</a>
+			</p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="calendar.js"></script>
+<script type="text/javascript">
+	(function () {
+
+		var priceData = null;
+	
+		function fn (timeArry, indexArry) {
+			console.log(timeArry);
+			console.log(indexArry);
+			alert('开始时间：' + timeArry[0] + '----------------结束时间：' + timeArry[1]);
+			var calendarWraper = document.querySelector('#calendar-wraper');
+			calendarWraper.style.display = 'none';
+			calendarBackdrop.style.display = 'none';
+		}
+		
+		var calendarBackdrop = document.querySelector('#calendar-backdrop'),
+			showCalendar = document.querySelector('#show-calendar');
+
+		showCalendar.onclick = function () {
+			try {
+				var calendarWraper = document.querySelector('#calendar-wraper');
+				document.body.removeChild(calendarWraper);
+			} catch (e) {
+				var step = document.querySelector('#step').value,
+					leastdays = document.querySelector('#leastdays').value,
+					showPrice = document.querySelector('#show-price').value === '1' ? true : false;
+
+				if (showPrice) {
+					priceData = ['15', '43', '23', '41', '17', '23', '42', '89', '41', '16', '39', '95', '94', '37', '29', '40', '30', '15', '43', '23', '41', '17', '23', '42', '89', '41', '16', '39', '95', '94', '37', '29', '40', '30', '15', '43', '23', '41', '17', '23', '42', '89', '41', '16', '39', '95', '94', '37', '29', '40', '30', '15', '43', '23', '41', '17', '23', '42', '89', '41', '16', '39', '95', '94', '37', '29', '40', '30'];
+				} else {
+					priceData = null;
+				}
+
+				var calendar = new Calendar({
+					step: step,
+					leastDays: leastdays,
+					callback: fn,
+					priceData: priceData
+				}).init();
+
+				var calendarWraper = document.querySelector('#calendar-wraper');
+				calendarWraper.style.display = 'block';
+				calendarBackdrop.style.display = 'block';
+
+				calendarBackdrop.onclick = function () {
+					document.body.removeChild(calendarWraper);
+					this.style.display = 'none';
+				}
+			}
+		};
+
+		showCalendar = null;
+
+	})();
+</script>
