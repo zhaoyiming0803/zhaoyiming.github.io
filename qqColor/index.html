@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>QQ拾色器_赵一鸣博客提供技术支持</title>
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+	</head>
+	<style type="text/css">
+	*{margin:0px;padding:0px}
+	li{list-style:none}
+	img{border:0px}
+	a{text-decoration:none}
+	#box{width:500px;height:150px;margin:100px auto 0px auto}
+	#text{width:100%;height:100px;border:1px solid #ccc;}
+	#btn{width:15px;height:15px;background:url(images/but.png) no-repeat center top;float:right;margin-top:5px;cursor:pointer}
+	#change{width:280px;height:270px;background:#FBFBFB;border:1px solid #ddd;position:absolute;left:40%;top:170px;z-index:3;display:none}
+	#title{width:100%;height:40px;text-align:center;line-height:40px;font-size:14px;font-weight:normal;display:block;cursor:move} 
+	#close{width:31px;height:20px;background:url(images/close.png) no-repeat right top;float:right;margin-top:-40px;cursor:pointer}
+	#change ul{width:255px;height:210px;overflow:hidden;margin:0px auto}
+	#change ul li{width:24px;height:24px;float:left;margin:5px;border:1px solid #666}
+	#main{width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:2;display:none}
+	</style>
+	<body>
+		<div id="box">
+			<!--文本输入框-->
+			<div id="text" contenteditable="true"></div>
+			<!--拾色器按钮-->
+			<div id="btn"></div>
+		</div>
+		<!--拾色板-->
+		<div id="change">
+			<h3 id="title">QQ拾色器</h3>
+			<div id="close"></div>
+			<ul>
+				<li style="background-color:#ff8080;"></li>
+				<li style="background-color:#ffff80;"></li>
+				<li style="background-color:#80ff80;"></li>
+				<li style="background-color:#80ffff;"></li>
+				<li style="background-color:#0080ff;"></li>
+				<li style="background-color:#ff80c0;"></li>
+				<li style="background-color:#ff80ff;"></li>
+				<li style="background-color:#ff0000;"></li>
+				<li style="background-color:#ffff00;"></li>
+				<li style="background-color:#80ff00;"></li>
+				<li style="background-color:#00ffff;"></li>
+				<li style="background-color:#0080c0;"></li>
+				<li style="background-color:#8080c0;"></li>
+				<li style="background-color:#ff00ff;"></li>
+				<li style="background-color:#804040;"></li>
+				<li style="background-color:#ff8040;"></li>
+				<li style="background-color:#00ff00;"></li>
+				<li style="background-color:#008080;"></li>
+				<li style="background-color:#004080;"></li>
+				<li style="background-color:#8080ff;"></li>
+				<li style="background-color:#800040;"></li>
+				<li style="background-color:#ff0080;"></li>
+				<li style="background-color:#800000;"></li>
+				<li style="background-color:#ff8000;"></li>
+				<li style="background-color:#008000;"></li>
+				<li style="background-color:#008040;"></li>
+				<li style="background-color:#0000ff;"></li>
+				<li style="background-color:#0000a0;"></li>
+				<li style="background-color:#800080;"></li>
+				<li style="background-color:#8000ff;"></li>
+				<li style="background-color:#400000;"></li>
+				<li style="background-color:#804000;"></li>
+				<li style="background-color:#004000;"></li>
+				<li style="background-color:#004040;"></li>
+				<li style="background-color:#000080;"></li>
+				<li style="background-color:#000040;"></li>
+				<li style="background-color:#400040;"></li>
+				<li style="background-color:#000000;"></li>
+				<li style="background-color:#808000;"></li>
+				<li style="background-color:#808040;"></li>
+				<li style="background-color:#808080;"></li>
+				<li style="background-color:#408080;"></li>
+			</ul>
+		</div>
+		<div id="main"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		var oBtn = document.getElementById("btn");
+		var oChange = document.getElementById("change"); 
+		var oMain = document.getElementById("main");
+		var oClose = document.getElementById("close");
+		var oText = document.getElementById("text");
+		var aLi = document.getElementsByTagName("li");
+		var oTitle = document.getElementById("title");
+		//鼠标点击拾色器按钮，拾色面板显示
+		oBtn.onclick = function(){
+			oChange.style.display = "block";
+			oMain.style.display = "block";
+		};
+		//鼠标点击关闭按钮，拾色面板隐藏
+		oClose.onclick = function(){
+			oChange.style.display = "none";
+			oMain.style.display = "none";
+		};
+		//改变文本框中的文字颜色
+		for(var i=0;i<aLi.length; i++){
+			aLi[i].index = i;
+			aLi[i].onclick = function(){
+				oText.style.color = this.style.backgroundColor;
+			};
+		};
+		//鼠标按下的时候获得鼠标指针和面板当前的坐标
+		oTitle.onmousedown = function(e){
+			//鼠标的坐标
+			var otX = e.clientX;
+			var otY = e.clientY;
+			//拾色面板的坐标
+			var ocX = oChange.offsetLeft;
+			var ocY = oChange.offsetTop;
+			//鼠标指针与拾色面板之间的距离
+			var oWidth = otX - ocX;
+			var oHeight = otY - ocY;
+			var doc = document;
+			doc.onmousemove = function(e){
+				//鼠标的坐标
+				var otXs = e.clientX;
+				var otYs = e.clientY;
+				//拾色面板的坐标
+				var ocXs = otXs - oWidth;
+				var ocYs = otYs - oHeight;
+				oChange.style.left = ocXs+"px";
+				oChange.style.top = ocYs+"px";
+			};
+			doc.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			};
+		};
+	}
+</script>

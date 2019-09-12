@@ -1,0 +1,672 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#3C3C3C;
+}
+img{
+	border:none;
+}
+.clear:after{
+	width:100%;
+	height:0px;
+	content:"";
+	clear:both;
+	overflow:hidden;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+h1{
+	font-size:16px;
+}
+html,body{
+	width:100%;
+	height:100%;
+	overflow-x:hidden;
+	font:12px/1.231 Verdana,arial,helvetica,clean,sans-serif;
+	color:#666;
+}
+.box{
+	width:100%;
+	max-width:1100px;
+	margin:0px auto;
+	padding:10px 0px;
+	overflow:hidden;
+}
+.header .hTop{
+	width:100%;
+	height:40px;
+	background:#fefcfd;
+}
+.header .hTop .hTopLeft{
+	float:left;
+}
+.header .hTop .hTopRight{
+	float:right;
+}
+.header .hTop .hTopRight a{
+	border-right:1px solid #ccc;
+	padding:0px 10px;
+}
+.header .lc{
+	height:54px;
+	margin:10px auto;
+}
+.header .lc .lLeft .logo p{
+	height:54px;
+	margin-left:15px;
+	display:inline;
+}
+.header .lc .lLeft .logo p span{
+	display:block;
+	height:27px;
+	line-height:27px;
+	font-weight:bold;
+	font-size:14px;
+	color:#555;
+	letter-spacing:2px;
+}
+.header .lc .lRight p{
+	height:27px;
+	line-height:27px;
+}
+.header .lc .lRight p span{
+	color:#057205;
+	font-weight:bold;
+	font-size:14px;
+}
+.header .nav{
+	height:50px;
+	background:#1f8e04;
+}
+.navBox{
+	width:100%;
+	max-width:1100px;
+	margin:0px auto;
+}
+.navBox a{
+	width:13.9%;
+	display:inline-block;
+	font-size:14px;
+	color:#fff;
+	text-align:center;
+	line-height:50px;
+}
+.navBox a:hover,.navBox a.on{
+	background:#0072bf;
+}
+.banner{
+	width:100%;
+	height:300px;
+	position:relative;
+	overflow:hidden;
+	margin:0px auto;
+}
+.banner .pic{
+	height:9999px;
+}
+.banner .pic li{
+	width:100%;
+	height:300px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
+.banner .pic li a{
+	height:100%;
+	display:block;
+}
+.banner .btn{
+	width:90px;
+	height:22px;
+	position:absolute;
+	bottom:30px;
+	left:50%;
+	margin-left:45px;
+	overflow:hidden;
+}
+.banner .btn li{
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	border:1px solid #1F8E04;
+	background:#fff;
+	color:#1F8E04;
+	float:left;
+	cursor:pointer;
+	margin-left:7px;
+	display:inline;
+}
+.banner .btn li.hov{
+	background:#1F8E04;
+	color:#fff;
+}
+.productShow{
+	overflow:hidden;
+}
+.productShow .productCenter{
+	width:250px;
+	float:left;
+	background:#efefef;
+}
+.productShow h3{
+	height:40px;
+	line-height:40px;
+	color:#fff;
+	font-size:14px;
+	background:#1f8e04;
+	padding-left:20px;
+}
+.productShow .productCenter .productClass span{
+	display:block;
+	height:40px;
+	line-height:40px;
+	padding-left:40px;
+	font-weight:bold;
+}
+.productShow .productCenter .productClass ul li{
+	height:30px;
+	line-height:30px;
+	border-bottom:1px dashed #ccc;
+	padding-left:60px;
+}
+.productShow .productCenter .productClass ul li a:hover{
+	text-decoration:underline;
+}
+.productShow .productRecom{
+	width:800px;
+	float:right;
+}
+.productShow .productRecom .productRecomPic{
+	padding-top:10px;
+}
+.productShow .productRecom .productRecomPic ul{
+	overflow:hidden;
+}
+.productShow .productRecom .productRecomPic ul li{
+	width:190px;
+	height:235px;
+	float:left;
+	margin-left:4px;
+	margin-right:4px;
+	margin-bottom:8px;
+	border:1px solid #ddd;
+}
+.productShow .productRecom .productRecomPic ul li:hover{
+	border:1px solid #1f8e04;
+}
+.productShow .productRecom .productRecomPic ul li p a{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	display:block;
+}
+.productShow .productRecom .productRecomPic ul li p a:hover{
+	text-decoration:underline;
+}
+.process{
+	width:100%;
+	height:285px;
+	background:url("../images/dt_bj.jpg") repeat;
+	margin:5px auto 10px auto;
+	padding:30px 0px;
+}
+.process h2{
+	font-size:25px;
+	text-align:center;
+	color:#333;
+}
+.process ul{
+	width:985px;
+	height:104px;
+	margin:25px auto 25px auto;
+}
+.process ul li{
+	width:117px;
+	height:104px;
+	display:inline;
+	float:left;
+	position:relative;
+	background:url("../images/lc_j.png") no-repeat right 50px;
+	margin-left:6px;
+	z-index:999;
+}
+.process ul .li02{
+	background-image:none;
+}
+.process ul li a{
+	width:103px;
+	height:104px;
+	display:block;
+	background:url("../images/lc_lbj02.png") no-repeat left top;
+}
+.process ul li a:hover{
+	background:url("../images/lc_lbj2.png") no-repeat left top;
+}
+.process ul .li01 a{
+	background:url("../images/lc_lbj1.png") no-repeat left top;
+}
+.process ul .li01 a:hover{
+	background:url("../images/lc_lbj01.png") no-repeat left top;
+}
+.process ul .li02 a{
+	background:url("../images/lc_w1.png") no-repeat left top;
+}
+.process ul .li02 a:hover{
+	background:url("../images/lc_w01.png") no-repeat left top;
+}
+.process ul li p{
+	font: bold 14px "Microsoft Yahei";
+	color: #fff;
+	position: absolute;
+	top: 64px;
+	left: 0;
+	width: 103px;
+	text-align: center;
+}
+.process .indexPhone{
+	text-align:center;
+	color:#222;
+	font-size:18px;
+	font-weight:bold;
+}
+.process .indexPhone .tel{
+	color:#1f8e04;
+}
+.instant a{
+	width:150px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	font-size:16px;
+	color:#fff;
+	background:#0072bf;
+	margin:10px auto 0px auto;
+	display:block;
+}
+.dispelDoubts{
+	margin:30px auto;
+}
+.dispelDoubts .dispelDetail{
+	width:260px;
+	height:210px;
+	float:left;
+	margin:0px 7px 0px 7px;
+	display:inline;
+	position:relative;
+}
+.dispelDoubts .dispelDetail p{
+	position:absolute;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+	line-height:20px;
+	padding:5%;
+	background:rgba(0,0,0,0.4);
+	color:#fff;
+	display:none;
+}
+.aboutCompany{
+	width:100%;
+	background:url("../images/dt_bj.jpg") repeat;
+	overflow:hidden;
+}
+.aboutCompany .companyVideo{
+	width:400px;
+	height:300px;
+	background:red;
+	float:left;
+}
+.aboutCompany .companyTxt{
+	width:650px;
+	height:300px;
+	float:right;
+}
+.aboutCompany .companyTxt .companyTxtTitle{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+}
+.aboutCompany .companyTxt .companyTxtContent{
+	height:230px;
+	line-height:30px;
+	overflow:hidden;
+}
+.aboutCompany .companyTxt a{
+	width:100px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	color:#fff;
+	display:inline-block;
+	margin-right:20px;
+	background:#0072bf;
+}
+.album{
+	margin:30px auto;
+	position:relative;
+}
+.album .dwAlbum{
+	font-size:25px;
+	font-weight:bold;
+	text-align:center;
+}
+.album .albumPic ul{
+	width:9999px;
+}
+.album .albumPic ul li{
+	width:200px;
+	height:200px;
+	float:left;
+	margin-right:20px;
+}
+.album span{
+	width:30px;
+	height:100px;
+	text-align:center;
+	line-height:100px;
+	background:rgba(0,0,0,0.5);
+	color:#fff;
+	font-size:20px;
+	position:absolute;
+	top:50%;
+	margin-top:-50px;
+	cursor:pointer;
+	display:none;
+}
+.album span.aLeft{
+	left:0px;
+}
+.album span.aRight{
+	right:0px;
+}
+.customerMessage{
+	height:460px;
+	background:url("../images/dt_bj.jpg") repeat;
+	padding-top:20px;
+}
+.customerMessage .orderMessage{
+	width:359px;
+	height:460px;
+	background:url("../images/fx_l.gif") no-repeat;
+	float:left;
+}
+.customerMessage .orderMessage span{
+	height:95px;
+	line-height:95px;
+	font-size:16px;
+	color:#fff;
+	text-align:center;
+	font-weight:bold;
+	display:block;
+}
+.customerMessage .orderMessage .orderList{
+	height:305px;
+	overflow:hidden;
+}
+.customerMessage .orderMessage .orderList ul{
+	height:9999px;
+}
+.customerMessage .orderMessage ul li{
+	height:30px;
+	line-height:30px;
+	padding-left:35px;
+}
+.customerMessage .orderMessage ul li a{
+	padding:0px 10px;
+}
+.customerEvaluate{
+	width:670px;
+	float:right;
+}
+.customerEvaluate span{
+	display:block;
+	height:95px;
+	line-height:95px;
+	font-weight:bold;
+	font-size:16px;
+}
+.customerEvaluate ul li{
+	height:150px;
+	margin-bottom:10px;
+}
+.customerEvaluate ul li .evaluatePic{
+	width:184px;
+	height:122px;
+	float:left;
+	overflow:hidden;
+}
+.customerEvaluate ul li .evaluateTxt{
+	padding-left:20px;
+	line-height:30px;
+	overflow:hidden;
+}
+.customerEvaluate ul li .evaluateTxt a{
+	width:100px;
+	height:30px;
+	background:#0072bf;
+	text-align:center;
+	line-height:30px;
+	color:#fff;
+	display:block;
+}
+.information .infoTitle{
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+.information .infoContent .infoContentLeft{
+	width:359px;
+	height:260px;
+	float:left;
+}
+.information .infoContent .infoContentLeft p{
+	line-height:25px;
+}
+.infoContentRight{
+	width:670px;
+	float:right;
+}
+.infoContentRight ul li{
+	height:100px;
+	line-height:25px;
+}
+.infoContentRight ul li .time{
+	width:100px;
+	height:30px;
+	border:1px solid #ccc;
+	float:left;
+}
+.infoContentRight ul li .abstract{
+	width:540px;
+	float:left;
+	margin-left:20px;
+}
+.friendLink{
+	background:url("../images/dt_bj.jpg") repeat;
+}
+.friendLink .linkTitle{
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:15px;
+}
+.friendLink .linkContent ul li{
+	float:left;
+	margin-bottom:10px;
+}
+.friendLink .linkContent ul li a{
+	padding:10px 20px 10px 0px;
+}
+.footer{
+	background: url("../images/dt_bj.jpg") repeat;
+}
+.footer .footerNav{
+	background:#1f8e04;
+}
+.footerContentLeft,.footerContentCenter{
+	float:left;
+}
+.footerContentRight{
+	float:right;
+}
+.footerContentLeft{
+	width:30%;
+}
+.footerContentLeft div,.footerContentRight div{
+	margin-bottom:15px;
+	font-size:16px;
+}
+.footerContentCenter{
+	width:40%;
+}
+.footerContentCenter p{
+	height:30px;
+	line-height:30px;
+}
+.footerContentRight{
+	width:30%;
+}
+.inpt p{
+	height: 30px;
+	line-height: 30px;
+	margin-bottom:10px;
+}
+.inpt p input{
+	width:200px;
+	height:20px;
+	outline:none;
+	border:1px solid #ccc;
+}
+textarea{
+	width:200px;
+	height:100px;
+	outline:none;
+	resize:none;
+	border:1px solid #ccc;
+	margin-left:3px;
+}
+.position{
+	height:40px;
+	line-height:40px;
+	border-bottom:2px solid #1f8e04;
+	margin-bottom:15px;
+}
+.position span{
+	float:left;
+}
+.position ul li{
+	float:left;
+}
+.flip{
+	height:30px;
+}
+.flip ul li{
+	float:left;
+	margin-right:20px;
+}
+.productContent .productSurvey{
+	overflow:hidden;
+	margin-bottom:15px;
+}
+.productContent .productSurvey .surveyLeft{
+	width:389px;
+	height:341px;
+	float:left;
+}
+.productContent .productSurvey .surveyRight{
+	width:390px;
+	height:341px;
+	float:right;
+}
+.productContent .productSurvey .surveyRight p{
+	line-height:30px;
+}
+.productContent .productSurvey .surveyRight p span{
+	font-size:14px;
+	font-weight:bold;
+	color:#1f8e04;
+}
+.productContent .productParam{
+	line-height:30px;
+}
+.productContent .productParam .paramTitle{
+	border-bottom:2px solid #1f8e04;
+	margin-bottom:10px;
+	font-size:16px;
+	font-weight:bold;
+	color:#1f8e04;
+}
+.connectOur{
+	overflow:hidden;
+}
+.connectOur .connectOurLeft{
+	float:left;
+}
+.connectOur .connectOurRight{
+	width:337px;
+	height:106px;
+	float:right;
+}
+.recomTitle{
+	height:40px;
+	line-height:40px;
+	border-bottom: 2px solid #1f8e04;
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #1f8e04;
+}
+.productRecommed .productRecommedContent{
+	overflow:hidden;
+}
+.productRecommed .productRecommedContent ul li{
+	width:180px;
+	height:200px;
+	float:left;
+	margin-left:10px;
+	margin-right:10px
+}
+.productRecommed .productRecommedContent ul li:hover p a{
+	text-decoration:underline;
+}
+.productRecommed .productRecommedContent ul li p{
+	height:20px;
+	line-height:20px;
+	text-align:center;
+}
+.newsRecommedContent{
+	overflow:hidden;
+}
+.newsRecommedContent ul li{
+	width:49%;
+	height:30px;
+	line-height:30px;
+	float:left;
+	padding-left:1%;
+	list-style:inside;
+}
+.newsRecommedContent ul li a:hover{
+	text-decoration:underline;
+}
+.articleTitle{
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+.articleContent{
+	line-height:25px;
+}

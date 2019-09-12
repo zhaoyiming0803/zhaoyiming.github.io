@@ -1,0 +1,27 @@
+*{margin:0px;padding:0px}
+li{list-style:none}
+img{border:0px}
+a{text-decoration:none}
+body{font-size:12px;font-family:"Microsoft Yahei";background:#abcdef}
+.box{width:360px;height:260px;background:#fff;margin:100px auto;padding:20px 20px}
+.box .wrap{width:360px;height:260px}
+.box .wrap .title{height:40px;line-height:40px;font-size:24px}
+.box .wrap .content .inputBox{height:40px;margin:15px auto 20px auto}
+.box .wrap .content .inputBox span{width:38px;height:38px;display:block;float:left;border:1px solid #ddd;border-right:none}
+.box .wrap .content .inputBox .account{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:0px 0px}
+.box .wrap .content .inputBox .password{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:-48px 0px}
+.box .wrap .content .inputBox input{width:318px;height:38px;outline:none;border:1px solid #ddd}
+.box .wrap .content .focus span.account{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:0px -48px;border:1px solid rgb(132,188,223);border-right:none}
+.box .wrap .content .focus span.password{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:-48px -48px;border:1px solid rgb(132,188,223)}
+.box .wrap .content .focus input{border:1px solid rgb(132,188,223)}
+.box .wrap .content .error span.account{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:0px -96px;border:1px solid rgb(288,132,113)}
+.box .wrap .content .error span.password{background-image:url("../images/icons.png");background-repeat:no-repeat;background-position:-48px -96px;border:1px solid rgb(288,132,113);border-right:none}
+.box .wrap .content .error input{border:1px solid rgb(288,132,113)}
+.box .wrap .content .hint{height:20px;margin-top:20px}
+.box .wrap .content .hint ul{overflow:hidden}
+.box .wrap .content .hint ul li:nth-child(1){float:left}
+.box .wrap .content .hint ul li:nth-child(2){float:right}
+.box .wrap .content .hint ul li:nth-child(2) a{color:#777}
+.box .wrap .content .sub{margin-top:20px}
+.box .wrap .content .sub input{width:100%;height:40px;display:block;cursor:pointer;background:#E4393C;color:white;font-size:18px;text-align:center;line-height:40px;outline:none;border:1px solid #E4393C}
+.power{width:400px;height:30px;text-align:center;line-height:30px;margin:-80px auto;font-size:14px}

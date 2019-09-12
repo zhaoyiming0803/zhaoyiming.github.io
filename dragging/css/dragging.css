@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/**
+ * Description: 弹出编辑框CSS
+ * User: zhaoyiming
+ * Date: 2017/9/21
+ */
+
+.edit-wraper {
+	display: none;
+	position: fixed;
+	left: 450px;
+	top: 200px;
+	z-index: 100;
+	width: 615px;
+	min-height: 340px;
+	background-color: #fafafa;
+}
+
+.edit-wraper .edit-title {
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 60px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+}
+
+.edit-wraper .edit-section {
+	padding: 40px 40px 0 40px;
+}
+
+.edit-wraper .edit-section .item {
+	display: flex;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 15px;
+}
+
+.edit-wraper .edit-section .item span {
+	flex: 1;
+	line-height: 40px;
+}
+
+.edit-wraper .edit-section .item input {
+	flex: 4;
+	height: 34px;
+	padding-left: 12px;
+	background: #f4f4f4;
+	border: 1px solid #eee;
+	border-radius: 7px;
+}
+
+.edit-wraper .close {
+	position: absolute;
+	right: -15px;
+	top: -16px;
+	width: 34px;
+	height: 34px;
+	background-image: url("../images/close.png");
+	background-repeat: no-repeat;
+	background-size: 34px 34px;
+	background-position: center top;
+	cursor: pointer;
+}
+
+.blue-btn {
+	position: relative;
+	width: 112px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: #00c1de;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 16px;
+}
+
+.blue-btn .btn-name {
+	position: absolute;
+	left: 45px;
+	top: 2px;
+}
+
+.mask {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}

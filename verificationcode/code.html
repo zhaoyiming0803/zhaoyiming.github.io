@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>登录、注册验证码生成</title>
+    </head>
+    <body>
+         <!--
+             * @Description  网站登录/注册验证码生成类
+             * @Author  赵一鸣
+             * @OnlineDemo http://www.zymseo.com/demo/verificationcode/code.html
+             * @Date  2016年10月6日 
+         -->
+    	<form action="checkcode.php" method="post">
+    	    <input type="text" name="code" /><br/>
+    	    <img src="showcode.php" onclick="this.setAttribute('src','showcode.php?'+Math.random())" />
+    	    <span>看不清？点击图片即可切换验证码</span><br/>
+    	    <input type="submit" name="sub" value="登录/注册" />
+    	</form>
+    </body>
+</html>

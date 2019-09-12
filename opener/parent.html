@@ -1,0 +1,51 @@
+<!--
+	Author : 赵一鸣
+	Blog ： http://www.zymseo.com
+	Time ： 2016/9/20
+-->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>父页面</title>
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<style type="text/css">
+			.clear{
+				position:fixed;
+				background:rgba(0,0,0,0.2);
+				top:0px;
+				right:0px;
+				bottom:0px;
+				left:0px;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="parentInpt" value="父页面与子页面数据交互" />
+		<input type="button" value="编辑" id="edit" />
+		<!--遮罩层-->
+		<div class="clear"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var parentPage = {
+		oEdit : document.getElementById('edit'),
+		oParentInpt : document.getElementById('parentInpt'),
+		oClear : document.getElementsByClassName('clear')[0],
+		//初始化方法
+		init : function(){
+			//点击编辑按钮
+			this.oEdit.onclick = this.editFunction;
+		},
+		//打开子页面，初始化子页面的宽高及位置
+		editFunction : function(){
+			var This = parentPage;
+			var oParentInptVal = This.oParentInpt.value;
+			This.oClear.style.display = 'block';
+			window.open('son.html',window,'height=500,width=500,left=500,top=0,scrollbars=yes');
+		}
+	};
+	parentPage.init();
+</script>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jsonp的使用方法_赵一鸣博客提供技术支持</title>
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<style type="text/css">
+			*{
+				margin:0px;
+				padding:0px
+			}
+			body{
+				font-size:14px;
+				color:#000;
+				font-family:"Microsoft Yahei"
+			}
+			li{
+				list-style:none
+			}
+			#box{
+				width:500px;
+				height:36px;
+				margin:0px auto
+			}
+			#txt{
+				width:350px;
+				height:32px;
+				outline:none
+			}
+			#btn{
+				width:100px;
+				height:36px;
+				background:#3385ff;
+				color:#fff;
+				border:1px solid #3385ff;
+				font-size:14px;
+				text-align:center;
+				outline:none
+			}
+			#list{
+				width:453px;
+				border:1px solid #ccc;
+				display:none
+			}
+			#list li{
+				line-height:36px
+			}
+			#list li a{
+				font-size:14px;
+				color:#000;
+				text-decoration:none;
+				display:block
+			}
+			#list li a:hover{
+				background:#ccc
+			}
+			#logo{
+				width:270px;
+				height:129px;
+				margin:50px auto 10px auto
+			}
+		</style>
+	</head>
+	<body>
+		<div id="logo">
+			<a href="http://www.zymseo.com" target="_blank">
+				<img src="https://www.baidu.com/img/bd_logo1.png" alt="百度一下" width="270" height="129">
+			</a>
+		</div>
+		<div id="box">
+			<input type="text" id="txt"><input type="submit" id="btn" value="百度一下">
+			<ul id="list">
+				
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oTxt = document.getElementById("txt");
+	var oList = document.getElementById("list");
+	var oBtn = document.getElementById("btn");
+	var oBox = document.getElementById("box");
+	oTxt.onkeyup = function(){
+		oList.style.display = "block";
+		var oValue = oTxt.value;
+		var oScript = document.createElement("script");
+		oScript.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+oValue+"&cb=fly";
+		document.body.appendChild(oScript);
+		document.body.removeChild(oScript);
+	}
+	oBox.onblur = function(){
+		oList.style.display = "none";
+	}
+	function fly(myJson){
+		var data = myJson.s;
+		var str = "";
+		for(var i=0; i<data.length; i++){
+			str += "<li><a href='https://www.baidu.com/s?wd="+data[i]+"' target='_blank'>"+data[i]+"</a></li>";
+		}
+		oList.innerHTML = str;
+	}
+	oBtn.onclick = function(){
+		var oValue = oTxt.value;
+		window.open("https://www.baidu.com/s?wd="+oValue);
+	}
+	oBtn.onmouseover = function(){
+		this.style.cursor = "pointer";
+	}
+</script>

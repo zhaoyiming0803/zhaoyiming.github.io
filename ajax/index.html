@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>如何用ajax获取后台数据并展示在前端页面_赵一鸣博客提供技术支持</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<style type="text/css">
+			*{margin:0px;padding:0px}
+			tr{list-style:none;clear:both;margin-bottom:10px}
+			table{counter-reset:count;margin:0px}
+			tr:before{list-style:none;content:counter(count);counter-increment:count 1;display:block;float:left;width:20px;height:20px;background:#ccc;color:#fff;text-align:center;line-height:20px;margin-right:10px}
+			table tr td{padding:0px 10px;line-height:30px;font-size:14px}
+		</style>
+	</head>
+	<body>
+		<table id="list"></table>
+		<button id="btn">NBA球星资料查询</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var oList = document.getElementById("list");
+	var oBtn = document.getElementById("btn");
+	//点击按钮，加载后台内容
+	oBtn.onclick = function(){
+		ajax("get","admin.php",true);
+	}
+	//把从后台获取到的内容展示在前端
+	function fn(data){
+		var data = eval(data);
+		var dLength = data.length;
+		//alert(data.constructor);
+		var str = "";
+		for(var i=0; i<dLength; i++){
+			str +="<tr><td>姓名：</td><td>"+data[i].name+"</td><td>所属球队：</td><td>"+data[i].belong+"</td></tr>"
+		}
+		oList.innerHTML = str;
+	}
+	//通过ajax获取后台数据
+	function ajax(method,url,ayne){
+		var xhr = null;
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		//window.XMLHttpRequest?(xhr=new XMLHttpRequest()):(xhr=new ActiveXObject("Microsoft.XMLHTTP"));
+		xhr.open(method,url,ayne);
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4){
+				if(xhr.status>=200&&xhr.status<300){
+					fn(xhr.responseText);
+				}else{
+					alert("程序有误！");
+				}
+			}
+		}
+	}
+</script>

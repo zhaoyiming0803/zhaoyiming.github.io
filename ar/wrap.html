@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="Keywords" content="">
+		<meta name="Description" content="">
+		<style type="text/css">
+			a{text-decoration:none;}
+			thead tr{background-color:#958989;color:#fff;}
+			td{height:30px;line-height:30px;border:1px solid #ccc;padding:0 10px;text-align:center;}
+			.red{color:red;text-decoration:underline;}
+		</style>
+	</head>
+	<body>
+		<div class="nav" ng-controller="ctr">
+			<a ui-sref="index({id:1})" ng-class="{red: params.id==1}">首页</a>
+			<a ui-sref="list({id:2})" ng-class="{red: params.id==2}">列表页</a>
+			<a ui-sref="article({id:3})" ng-class="{red: params.id==3}">文章页</a>
+		</div>
+		<div ui-view></div>
+	</body>
+</html>
+<script type="text/javascript" src="./js/require.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
