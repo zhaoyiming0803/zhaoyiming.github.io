@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="message"></div>
+    <script>
+      ~(function (window, document) {
+        var message = document.querySelector("#message");
+        document.addEventListener("visibilitychange", (e) => {
+          // 用户离开了当前页面，比如在手机上切换到别的了app
+          console.log(e);
+          message.innerText = "刚离开过这个页面";
+        });
+      })(window, document);
+    </script>
+  </body>
+</html>
