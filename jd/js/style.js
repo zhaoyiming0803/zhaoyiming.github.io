@@ -150,4 +150,4 @@ $(function(){
 	/*-----------------------------floor产品end--------------------------*/
 	alert("经过测试，本案例中的css样式已经兼容所有的主流浏览器（包括IE6-9）。为了方便，javascript中用到了document.getElementsByClassName，暂不兼容ie9以下版本浏览器，如有兴趣，可以联系我个人QQ（1047832475），免费为大家提供另外一套可以实现同样效果的js源码！");
 })
-console.log("欢迎所有的WEB前端开发爱好者与我联系，一起交流学习。个人QQ：1047832475、个人博客：http://www.zymseo.com");
+console.log("欢迎所有的WEB前端开发爱好者与我联系，一起交流学习。个人QQ：1047832475、个人博客：http://www.zhaoyiming.com");

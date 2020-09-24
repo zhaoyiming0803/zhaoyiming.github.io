@@ -1,26 +1,26 @@
 <?php
     /**
-     * @Description  ÍøÕ¾µÇÂ¼/×¢²áÑéÖ¤ÂëÉú³ÉÀà
-     * @Author  ÕÔÒ»Ãù
-     * @OnlineDemo http://www.zymseo.com/demo/verificationcode/code.html
-     * @Date  2016Äê10ÔÂ6ÈÕ 
+     * @Description  ï¿½ï¿½Õ¾ï¿½ï¿½Â¼/×¢ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * @Author  ï¿½ï¿½Ò»ï¿½ï¿½
+     * @OnlineDemo http://www.zhaoyiming.com/demo/verificationcode/code.html
+     * @Date  2016ï¿½ï¿½10ï¿½ï¿½6ï¿½ï¿½ 
      */
     class Createcode{
-        //»­²¼×ÊÔ´
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´
         public $img;
-        //»­²¼¿í¶È
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         private $img_width;
-        //»­²¼¸ß¶È
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
         private $img_height;
-        //»­²¼ÑÕÉ«
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
         private $img_bgcolor;
-        //ÑéÖ¤ÂëÎÄ×ÖÄÚÈÝ
+        //ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         private $str_content;
-        //Éú³ÉµÄÑéÖ¤ÂëÄÚÈÝ
+        //ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         private $code_content;
-        //ÑéÖ¤ÂëÑÕÉ«
+        //ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½É«
         private $code_content_color;
-        //¹¹Ôìº¯Êý
+        //ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½
         public function __construct($img_width,$img_height,$str_content,$code_content_color){
             if($this->gdcheck()){
                 $this->img_width = $img_width;
@@ -31,54 +31,54 @@
                 $this->session_code();
             }
         }
-        //Éú³É»­²¼
+        //ï¿½ï¿½ï¿½É»ï¿½ï¿½ï¿½
         public function get_img(){
-            //¶¨Òå»­²¼
+            //ï¿½ï¿½ï¿½å»­ï¿½ï¿½
             $this->img = imagecreatetruecolor($this->img_width, $this->img_height);
-            //»­²¼±³¾°É«
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
             $this->img_bgcolor = imagecolorallocate($this->img, mt_rand(0,255), mt_rand(0,255), mt_rand(0,255));
-            //¸ø»­Í¼Ìî³ä±³¾°É«
+            //ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ä±³ï¿½ï¿½É«
             imagefill($this->img, 0, 0, $this->img_bgcolor);
-            //È¡µÃ»­²¼µÄ¿í¸ß
+            //È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½
             $img_width = imagesx($this->img);
             $img_height = imagesy($this->img);
-            //»­²¼ÖÐ²åÈëÑéÖ¤Âë
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
             imagestring($this->img, 5, ($this->img_width/3), ($this->img_height/2.5), $this->code_content, imagecolorallocate($this->img, hexdec(substr($this->code_content_color, 1,2)), hexdec(substr($this->code_content_color, 3,2)), hexdec(substr($this->code_content_color, 5,2))));
-            //»­²¼ÖÐ²åÈëÏñËØµã
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½
             $this->get_pix();
-            //»­²¼ÖÐ²åÈëÖ±Ïß
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
             $this->get_line();
-            //»­²¼ÏÔÊ¾
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
             header('Content-type:image/png');
             imagepng($this->img);
         }
-        //Éú³ÉÑéÖ¤Âë
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
         private function get_code(){
             $str_content_len = strlen($this->str_content);
             for($i=0;$i<4;$i++){
                 $this->code_content .= substr($this->str_content, mt_rand(0,$str_content_len-1),1);
             }
         }
-        //Éú³ÉÏñËØµã
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½
         private function get_pix(){
             for($j=0;$j<300;$j++){
                 $image_pix .= imagesetpixel($this->img, mt_rand(0,$this->img_width), mt_rand(0,$this->img_height), imagecolorallocate($this->img, mt_rand(0,255), mt_rand(0,255), mt_rand(0,255)));
             }
             return $image_pix;
         }
-        //Éú³ÉÖ±Ïß
+        //ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½
         private function get_line(){
             for($l=0;$l<2;$l++){
                 $img_line .= imageline($this->img, mt_rand(0,$this->img_width), mt_rand(0,$this->img_height), mt_rand(0,$this->img_width), mt_rand(0,$this->img_height), imagecolorallocate($this->img, mt_rand(0,255), mt_rand(0,255), mt_rand(0,255)));
             }
             return $img_line;
         }
-        //session´æ´¢ÑéÖ¤Âë
+        //sessionï¿½æ´¢ï¿½ï¿½Ö¤ï¿½ï¿½
         private function session_code(){
             session_start();
             $_SESSION['code'] = $this->code_content;
         }
-        //ÅÐ¶Ï³ÌÐòÊÇ·ñÖ§³ÖGD¿â
+        //ï¿½Ð¶Ï³ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ö§ï¿½ï¿½GDï¿½ï¿½
         private function gdcheck(){
             if(extension_loaded('gd')){
                 return true;

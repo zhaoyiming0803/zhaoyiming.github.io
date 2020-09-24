@@ -2,7 +2,7 @@
 /**
  * @Description  网站登录/注册验证码生成类
  * @Author  赵一鸣
- * @OnlineDemo http://www.zymseo.com/demo/verificationcode/code.html
+ * @OnlineDemo http://www.zhaoyiming.com/demo/verificationcode/code.html
  * @Date  2016年10月6日
  */
     header('Content-type:text/html;charset="utf-8"');

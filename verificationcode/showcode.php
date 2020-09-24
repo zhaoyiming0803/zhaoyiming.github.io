@@ -1,17 +1,17 @@
 <?php
 /**
- * @Description  ÍøÕ¾µÇÂ¼/×¢²áÑéÖ¤ÂëÉú³ÉÀà
- * @Author  ÕÔÒ»Ãù
- * @OnlineDemo http://www.zymseo.com/demo/verificationcode/code.html
- * @Date  2016Äê10ÔÂ6ÈÕ
+ * @Description  ï¿½ï¿½Õ¾ï¿½ï¿½Â¼/×¢ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * @Author  ï¿½ï¿½Ò»ï¿½ï¿½
+ * @OnlineDemo http://www.zhaoyiming.com/demo/verificationcode/code.html
+ * @Date  2016ï¿½ï¿½10ï¿½ï¿½6ï¿½ï¿½
  */
     function __autoload($classname){
         include strtolower($classname).'.class.php';
     }
-    //¶¨ÒåÑéÖ¤ÂëµÄÈ¡Öµ·¶Î§
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½È¡Öµï¿½ï¿½Î§
     $str_content = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    //ÑéÖ¤ÂëÎÄ×ÖÑÕÉ«
+    //ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
     $code_content_color = '#ffffff';
-    //³õÊ¼»¯¶ÔÏó
+    //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     $code = new Createcode(100,30,$str_content,$code_content_color);
     $code->get_img();
